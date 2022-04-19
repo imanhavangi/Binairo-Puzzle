@@ -16,12 +16,12 @@ def main():
     board = []
     size_puzzle = input_numbers[0][0]
     for i in range(0,size_puzzle):
-        
         row = []
         for j in range(0,size_puzzle):
             cell = Cell(i,j)
             row.append(cell)
-        board.append(row) 
+        board.append(row)
+    # print(board[0][1].domain)
    
     for i in range(2,len(input_numbers)) :
         
@@ -39,6 +39,7 @@ def main():
     state.print_board()
     start_time =time()
     #backTrack(state)   implement backTrack and other csp functions in Binairo.py
+
     end_time= time()
     print('time: ',end_time-start_time)
 

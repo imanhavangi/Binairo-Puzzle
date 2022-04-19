@@ -9,7 +9,7 @@ class State:
         for i in range(0,self.size):
             for j in range(0,self.size):
                 print(self.board[i][j].domain,end=" ")
-            print("\n") 
+            print("\n")
             
     def print_board(self):
         whtieCircle = '\u26AA'
