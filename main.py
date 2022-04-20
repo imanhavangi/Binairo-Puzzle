@@ -38,8 +38,8 @@ def main():
     print('initial board:')
     state.print_board()
     start_time =time()
-    #backTrack(state)   implement backTrack and other csp functions in Binairo.py
-
+    print('Solved with backtrack1:')
+    backtrack1(state).print_board()
     end_time= time()
     print('time: ',end_time-start_time)
 

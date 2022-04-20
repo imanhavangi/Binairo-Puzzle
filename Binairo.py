@@ -109,4 +109,24 @@ def check_termination(state:State):
     return is_consistent(state) and is_assignment_complete(state)
 
 
+def backtrack1(state):
+    if is_assignment_complete(state):
+        return state
 
+    i = 0
+    j = 0
+    while state.board[i][j].value != '_':
+        j += 1
+        if j == state.size:
+            j = 0
+            i += 1
+    first = state.board[i][j]
+    
+    for domain in first.domain:
+        local_state = deepcopy(state)
+        local_state.board[first.x][first.y].value = domain
+        if is_consistent(local_state):
+            result = backtrack1(local_state)
+            if result is not None:
+                return result
+    return None
